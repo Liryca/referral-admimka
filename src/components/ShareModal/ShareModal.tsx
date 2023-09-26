@@ -27,7 +27,6 @@ const ShareModal: React.FC = () => {
                 </a>
                 <a className='btn_whatsapp_share'
                     href={`https://wa.me/?text=Referral ID12345678`} target="_blank">
-                    <WhatsApp/>
                     <img src={whatsapp} alt='whatsapp'></img>
                 </a>
 
