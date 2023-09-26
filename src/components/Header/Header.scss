@@ -1,0 +1,57 @@
+.header {
+  border-bottom: 1px solid #E5E7EB;
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1374px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 33px;
+  }
+
+  &__logo {
+    cursor: pointer;
+    width: 154px;
+    height: 90px;
+  }
+
+  &__right-block {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  &__link {
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      color: #16a382;
+    }
+
+    &:active {
+      color: #2e7b60;
+    }
+  }
+
+  &__avatar {
+    width: 27px;
+    height: 27px;
+    transition: all ease 0.2s;
+    -webkit-mask-image: url("./images/profil.svg");
+    mask-image: url("./images/profil.svg");
+    background-color: #565555;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #16a382;
+    }
+
+    &:active {
+      background-color: #2e7b60;
+    }
+  }
+}

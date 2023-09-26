@@ -1,0 +1,46 @@
+.modal {
+  background: rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  &__content {
+    transition: 0.4s;
+    transform: scale(0.5);
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  &__icon {
+    padding-top: 23px;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover{
+        opacity: 0.95;
+    }
+  }
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.4s;
+}
+
+.modal__content.active {
+  transform: scale(1);
+  transition: 0.4s;
+}

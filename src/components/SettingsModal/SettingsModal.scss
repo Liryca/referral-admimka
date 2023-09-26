@@ -1,0 +1,165 @@
+.settingsModal {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    max-width: 813px;
+    width: 100%;
+
+    &__cup {
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 16px 12px 16px -4px rgba(0, 0, 0, 0.08);
+    }
+
+    &__content {
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 16px 12px 16px -4px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        padding: 9px 19px 30px 9px;
+        gap: 23px;
+    }
+
+    &__cup-content {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 17px 19px 29px 19px;
+    }
+
+    &__cup-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    &__cup-title {
+        font-family: "Nunito Sans", sans-serif;
+        color: #000;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%;
+    }
+
+    &__add-btn {
+        display: inline-flex;
+        padding: 5px 16px;
+        align-items: center;
+        gap: 8px;
+        border-radius: 8px;
+        background: #16a382;
+        color: #fff;
+        transition: 0.2s;
+        border: none;
+        cursor: pointer;
+
+        div {
+            text-wrap: nowrap;
+        }
+
+        &:hover {
+            background: #2e7b60;
+        }
+
+        &:active {
+            background: #2a5f4c;
+        }
+    }
+
+    &__save-btn {
+        border-radius: 8px;
+        border: 1px solid #16a382;
+        background: #fff;
+        transition: 0.2s;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 129px;
+        padding: 8px 16px;
+        margin-left: auto;
+        color: #16a382;
+
+        &:hover {
+            background: #16a382;
+            border: 1px solid #16a382;
+            color: #fff;
+        }
+
+        &:active {
+            border: 1px solid #2e7b60;
+            background: #2e7b60;
+            color: #fff;
+        }
+    }
+
+    &__tableContainer {}
+
+    &__thead th {
+        font-family: "Nunito Sans", sans-serif;
+        padding: 25px 10px;
+        color: #000;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 112%;
+        text-align: left;
+    }
+
+    &__tbody th {
+        text-align: left;
+        color: #565555;
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 10px;
+    }
+
+    &__icons {
+        display: flex;
+    }
+
+
+    &__ic-delete {
+        fill: #D9D9D9;
+        transition: 0.2s;
+
+        &:hover {
+            fill: #A02727;
+        }
+
+        &:active {
+            fill: #542829;
+        }
+    }
+
+    &__ic-edit {
+        stroke: #D9D9D9;
+        fill: none;
+        transition: 0.2s;
+
+        &:hover {
+            stroke: #16A382
+        }
+
+        &:active {
+            stroke: #2E7B60
+        }
+    }
+}
+
+@media (max-width: 514px) {
+    .settingsModal {
+        &__cup-content {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+    }
+}

@@ -1,0 +1,211 @@
+.addRefferralModal {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 813px;
+  width: 100%;
+
+
+
+  &__top-block {
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 16px 12px 16px -4px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 14px;
+    flex-shrink: 0;
+    padding: 25px 28px 25px 28px;
+  }
+
+  &__title {
+    color: #000;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+    
+  &__ic-copy{
+    stroke: #e4e4ef;
+    transition: 0.2s;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+
+    &:hover {
+      stroke: #808080;
+    }
+
+    &:active {
+      stroke: #565555;
+    }
+  }
+
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+    position: relative;
+
+    input {
+      height: 68px;
+      padding: 7px 16px;
+      border-radius: 8px;
+      border: 1px solid #e4e4ef;
+      background: #fff;
+      width: 100%;
+      outline: none;
+
+      ::placeholder {
+        color: #e4e4ef;
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      
+    }
+
+    p {
+      padding-left: 16px;
+      color: #565555;
+    }
+  }
+
+  &__bottom-block {
+    border-radius: 8px;
+    background: #fff;
+    padding: 53px 28px 32px 28px;
+  }
+
+  &__range {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__Сoefficient {
+    display: flex;
+    height: 50px;
+    align-items: flex-start;
+    gap: 17px;
+    flex-shrink: 0;
+
+    p {
+      color: #565555;
+    }
+  }
+
+  &__discounts {
+    display: flex;
+    height: 50px;
+    align-items: flex-start;
+    gap: 17px;
+    flex-shrink: 0;
+
+    p {
+      color: #565555;
+    }
+  }
+
+  &__tableContainer {
+    padding-top: 50px;
+
+    tr {
+      height: 20px;
+    }
+  }
+
+  &__thead th {
+    color: #000;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    border-bottom: none;
+    text-align: center;
+    padding: 5px 5px 5px 0;
+  }
+
+  &__tbody th:first-child {
+    color: #000;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__tbody th {
+    color: #565555;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    padding: 5px 5px 5px 0;
+    border-bottom: none;
+    text-align: center;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 38px;
+  }
+
+  &__action {
+    margin-left: 0;
+    max-width: 150px;
+    width: 100%;
+  }
+}
+
+.Сoefficient__title,
+.discounts__title {
+  width: 200px;
+}
+
+.MuiTableBody-root .addRefferralModal__tableRow:hover {
+  background: none;
+  box-shadow: none;
+}
+
+.addRefferralModal .MuiSlider-root {
+  color: #fff;
+}
+
+.addRefferralModal .css-1och62a-MuiSlider-root {
+  width: 70%;
+}
+
+.addRefferralModal {
+  .MuiSlider-thumb {
+    background-image: url("./images/Fig_1.svg");
+    background-color: #fff;
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.css-1eoe787-MuiSlider-markLabel {
+  top: 48;
+  color: "#E5E7EB";
+}
+
+.css-1eoe787-MuiSlider-markLabelActive {
+  top: 48;
+  color: "#16A382";
+}
