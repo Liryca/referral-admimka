@@ -6,6 +6,11 @@ import instagramm from './images/nstagram.svg'
 import telegramm from './images/telegram.svg';
 import vk from './images/wk.svg';
 import { WhatsApp } from '@mui/icons-material';
+import { Instagram } from '@mui/icons-material';
+import { Facebook } from '@mui/icons-material';
+import { Telegram } from '@mui/icons-material';
+// import {Vkontakte} from '@mui/icons-material';
+
 import whatsapp from './images/whatsapp.svg';
 
 const ShareModal: React.FC = () => {

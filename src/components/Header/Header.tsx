@@ -7,9 +7,10 @@ import Modal from '../Modal/Modal';
 
 
 const Header: React.FC = (): any => {
-
+    
     const [activePartnersModal, setactivePartnersModal] = useState(false);
-
+    const [open, setOpen] = useState(false);
+    const close = () => setOpen(false);
 
     return (
         <header className='header'>
@@ -17,10 +18,12 @@ const Header: React.FC = (): any => {
                 <div className='header__left-block'>
                     <img className='header__logo' src={logo} alt='logo'></img>
                 </div>
+                {/* <Hamburger open={open} setOpen={setOpen} /> */}
                 <div className='header__right-block'>
                     <Link className='header__link main-font' to={'/balance'}>Баланс</Link>
                     <p onClick={() => setactivePartnersModal(true)} className='header__link main-font'>Список партнеров</p>
                     <div className='header__avatar'></div>
+
                 </div>
             </div>
 
