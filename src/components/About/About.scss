@@ -27,6 +27,7 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
+        position: relative;
     }
 
     &__cup {
@@ -53,20 +54,21 @@
             padding-left: 10px;
         }
 
-        input {
-            display: flex;
-            max-width: 521px;
-            width: 100%;
-            height: 38px;
-            padding: 7px 16px;
-            align-items: center;
-            gap: 16px;
-            flex-shrink: 0;
-            border-radius: 8px;
-            border: 1px solid #e4e4ef;
-            background: #fff;
-            outline: none;
-        }
+    }
+
+    &__text{
+        display: flex;
+        max-width: 521px;
+        width: 100%;
+        height: 38px;
+        padding: 7px 16px;
+        align-items: center;
+        gap: 16px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        border: 1px solid #e4e4ef;
+        background: #fff;
+        outline: none;
     }
 
     &__defaultId {
@@ -175,6 +177,7 @@
     }
 
 
+
 @media(max-width:619px){
     .about{
         flex-direction: column;
@@ -183,4 +186,9 @@
     .right-block__procent{
         gap: 15px;
     }
+}
+
+.css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root{ // Snackbar
+justify-content: center;
+max-width: 100px;
 }

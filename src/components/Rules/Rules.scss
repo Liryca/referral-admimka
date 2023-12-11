@@ -44,6 +44,7 @@
         gap: 10px;
         cursor: pointer;
     }
+
     &__info {
         display: flex;
         flex-direction: column;
@@ -70,11 +71,13 @@
         width: 100%;
     }
 
-    &__dots{
+    &__dots {
         display: flex;
         gap: 5px;
-        img{
-            width: 8px; ;
+
+        img {
+            width: 8px;
+            ;
             height: 8px;
         }
 
@@ -99,8 +102,8 @@
     }
 
     &__ic-mark {
-        width: 17px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
         margin-top: 3px;
     }
 }
@@ -131,9 +134,18 @@
 
 @media (max-width: 744px) {
     .rules {
-       &__gallery{
-        flex-wrap: wrap;
-        justify-content: center;
-       }
+        &__gallery {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
+}
+
+@media(max-width:715px) {
+    .rules {
+        &__background {
+            background: #2E7B60;
+        }
+    }
+
 }

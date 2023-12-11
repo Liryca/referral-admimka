@@ -10,6 +10,7 @@
     max-width: 680px;
     max-height: 600px;
     width: 100%;
+    margin-bottom: 50px;
 
     &__title {
         font-family: "Nunito Sans", sans-serif;
@@ -55,9 +56,8 @@
 
 }
 
-@media(max-height:688px){
-    .partnersModal{
-        max-height: 400px;
-    }
+@media(max-height:600px){
+.partnersModal{
+    max-height: 500px;
 }
-
+}

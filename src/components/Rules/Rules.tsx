@@ -1,9 +1,6 @@
 import React from "react";
 import "./Rules.scss";
-import Icon from "../Icon/Icon";
-import IconsSvg from "./images/rulesIcon.svg";
 import mark from "./images/Mark.svg";
-// import down from "./images/Ic_down_Passive.png"
 import DownButton from "../DownButton/DownButton";
 import dot from './images/Ellipse.svg';
 

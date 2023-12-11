@@ -23,6 +23,11 @@
     gap: 64px;
   }
 
+  &__list{
+    display: flex;
+    gap: 64px;
+  }
+
   &__link {
     cursor: pointer;
     transition: 0.2s;
@@ -34,6 +39,10 @@
     &:active {
       color: #2e7b60;
     }
+  }
+
+  &__link.active{
+    color: #16a382;
   }
 
   &__avatar {
@@ -58,15 +67,16 @@
 }
 
 
-@media(max-width:688px) {
+@media(max-width:730px) {
   .header {
-    &__right-block {
+    &__right-block,&__list {
       gap: 20px
     }
+    
   }
 }
 
-@media(max-width:492px) {
+@media(max-width:626px) {
   .header {
     &__content {
       padding: 5px 15px;
@@ -85,26 +95,13 @@
 }
 
 
-// @media(max-width:688px){
-//   .header{
-//     &__right-block{
-//       display: flex;
-//       align-items: center;
-//       flex-direction: column-reverse;
-//       position: fixed;
-//       top: 0;
-//       /* right: -120%; */
-//       z-index: 100;
-//       display: flex;
-//       background: #FFFFFF;
-//       box-shadow: 4px 0 84px 20px rgb(77 90 203 / 17%);
-//       transition: left .2s linear;
-//       transition: 600ms ease 0s;
-//       justify-content: start;
-//       width: 400px;
-//       right: 0;
-//       max-height: 600px;
-//       height: 100%;
-//     }
-//   }
-// }
+@media(max-width:450px) {
+  .header {
+&__list{
+  gap: 0;;
+  flex-direction: column;
+  align-items: flex-end;
+}
+  }
+}
+

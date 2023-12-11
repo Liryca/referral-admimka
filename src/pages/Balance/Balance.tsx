@@ -90,10 +90,11 @@ const Balance: React.FC = () => {
                             <span>1000000 ₽</span>
                         </div>
                     </div>
-                    <Link className='footer__icon' to='/'>
+                    {/* <Link className='footer__icon' to='/'>
+                        <div className='balance__circle'>
                         <Icon classN={'balance__back'} id={'#back'} size={45} iconsSvg={IconsSvg} />
-                        
-                    </Link>
+                        </div>
+                    </Link> */}
                 </div>
                 <div className='balance__background'><div className='balance__history'>
                 <DownButton text="История" />

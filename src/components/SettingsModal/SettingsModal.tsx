@@ -31,19 +31,18 @@ const data = [
 ]
 
 interface PropsType{
-    setActiveModal: (v: boolean) => void;
+    setactiveSettingsModal: (v: boolean) => void;
+    setActiveAddReferralModal: (v: boolean) => void;
 }
 
-const SettingsModal: React.FC<PropsType> = ({setActiveModal}) => {
-
-    const [activeAddReferralModal, setActiveAddReferralModal] = useState(false);
+const SettingsModal: React.FC<PropsType> = ({setactiveSettingsModal, setActiveAddReferralModal}) => {
 
     const addReferal = () => {
         setActiveAddReferralModal(true)
     }
 
     const saveSettings = () => {
-        setActiveModal(false)
+        setactiveSettingsModal(false)
     }
 
 
@@ -100,7 +99,7 @@ const SettingsModal: React.FC<PropsType> = ({setActiveModal}) => {
                 <Button fn={saveSettings} classN={'settingsModal__save-btn main-font'} text={'Сохранить'} id={''} iconsSvg={''} size={14} />
             </div>
             
-            <Modal activeModal={activeAddReferralModal} setActiveModal={setActiveAddReferralModal}><AddRefferralModal/></Modal>
+ 
         </div>
     );
 };

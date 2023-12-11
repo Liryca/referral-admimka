@@ -19,6 +19,7 @@
         flex-direction: column;
         padding: 9px 19px 30px 9px;
         gap: 23px;
+        margin-bottom: 50px;
     }
 
     &__cup-content {
@@ -154,12 +155,28 @@
     }
 }
 
+@media (max-width: 570px) {
+    .settingsModal {
+        max-width: 450px;
+    }
+}
+
 @media (max-width: 514px) {
     .settingsModal {
+        max-width: 350px;
         &__cup-content {
             flex-direction: column;
             align-items: flex-start;
             gap: 10px;
+          
         }
+    }
+}
+
+
+@media (max-width: 410px) {
+    .settingsModal {
+        max-width: 250px;
+
     }
 }

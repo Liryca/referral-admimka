@@ -21,27 +21,28 @@ const ShareModal: React.FC = () => {
             <div className='shareModal__id'>
                 <p className='small-font'>Referral ID</p>
                 <p className='shareModal__text '>12345678</p>
+                <p className='shareModal__text '>https://accontsaaa59.43645</p>
 
             </div>
             <div className='shareModal__text shareModal__p'>Поделиться </div>
             <div className='shareModal__links'>
                 <a
                     className="btn_telegram_share"
-                    href="https://telegram.me/share/url?url=ВАШ_URL&text=Referral ID12345678" target="_blank">
+                    href="https://telegram.me/share/url?url=https://accontsaaa59.43645&text=Referral ID12345678" target="_blank">
                     <img src={telegramm} alt=''></img>
                 </a>
                 <a className='btn_whatsapp_share'
-                    href={`https://wa.me/?text=Referral ID12345678`} target="_blank">
+                    href={`https://wa.me/?text=Referral ID12345678 https://accontsaaa59.43645`} target="_blank">
                     <img src={whatsapp} alt='whatsapp'></img>
                 </a>
 
                 <a className='btn_whatsapp_share'
-                    href='https://www.facebook.com/sharer/sharer.php?u=Referral ID12345678 'target="_blank">
+                    href='https://www.facebook.com/sharer/sharer.php?u=https://accontsaaa59.43645 'target="_blank">
                     <img src={facebook} alt='facebook'></img>
                 </a>
 
                 <a   className='btn_whatsapp_share'
-                    href="http://vkontakte.ru/share.php?url=Referral ID12345678" target="_blank">
+                    href="http://vkontakte.ru/share.php?url=https://accontsaaa59.43645`" target="_blank">
                         <img src={vk} alt=''></img>
                     </a>
 
@@ -49,7 +50,6 @@ const ShareModal: React.FC = () => {
 
             </div>
         </div>
-
     );
 };
 

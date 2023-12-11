@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './AddReferralModal.scss';
 import Icon from '../Icon/Icon';
-import IconsSvg from "../SettingsModal/images/icons.svg";
-import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import Button from '../Button/Button';
 import Table from '@mui/material/Table';
@@ -16,21 +14,20 @@ import IconsAbouteSvg from '../About/images/Icons.svg';
 import { styled } from '@mui/material/styles';
 import line1 from './images/Line_1.svg';
 import line2 from './images/Line_2.svg';
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { enqueueSnackbar } from 'notistack';
-
-
-
+import thumb from './images/thumb.svg';
+import { Snackbar } from "@mui/material"
 
 
 const marks = [
     {
         value: 0,
-        label: '0%'
+        label: '0%',
+
     },
     {
         value: 25,
-        label: '25%'
+        label: '25%',
+        icon: thumb
     },
     {
         value: 50,
@@ -82,7 +79,7 @@ const marksDiscounts = [
 
 const IOSSlider = styled(Slider)(() => ({
     height: 2,
-    '& .18fkqhq-MuiSlider-root':{
+    '& .18fkqhq-MuiSlider-root': {
         color: '#16A382',
         width: '80%',
         height: 1,
@@ -148,22 +145,34 @@ function valuetext(value: number) {
     return `${value}°C`;
 }
 
-const AddRefferralModal: React.FC = () => {
+interface PropsType {
+    setActiveAddReferralModal : (v: boolean) => void
+}
 
-    // const [value, setValue] = React.useState<number[]>([0, 50]);
-    const [a, setA] = useState(0)
+const AddRefferralModal: React.FC<PropsType> = ({ setActiveAddReferralModal}) => {
 
-    console.log(a)
+    const [value, setValue] = React.useState<number[]>([0, 50]);
+    const [openAlert, setOpenAlert] = useState(false);
 
     const handleChange = (event: Event, newValue: number | number[]) => {
-        setA(Number((event!.target as HTMLInputElement)!.value))
+        console.log(event)
+        // setA(Number((event!.target as HTMLInputElement)!.value))
 
-        // setValue(newValue as number[]);
+        setValue(newValue as number[]);
     };
 
-    const cancel = () => { };
-    const save = () => { };
+    const cancel = () => {
+        setActiveAddReferralModal(false);
+    };
+    const save = () => {
+        setActiveAddReferralModal(false);
+    };
     const fn = () => { }
+
+    const handleClick = (v: string) => {
+        setOpenAlert(true)
+        navigator.clipboard.writeText(v);
+    };
 
     return (
         <div className='addRefferralModal'>
@@ -172,47 +181,52 @@ const AddRefferralModal: React.FC = () => {
                 <label className='addRefferralModal__description'>
                     <p className='small-font'>Описание:</p>
                     <input className='main-font' onChange={fn} type='text' placeholder='Поле ввода'></input>
-                    <CopyToClipboard
-                            text="451554565"
-                            onCopy={() => enqueueSnackbar("copied")}>
-                    <Icon classN='addRefferralModal__ic-copy' id='#copy' size={20} iconsSvg={IconsAbouteSvg} />
-                    </CopyToClipboard>
-                 
+                    <div onClick={() => handleClick('aaaaa')}>
+                        <Icon classN='addRefferralModal__ic-copy' id='#copy' size={20} iconsSvg={IconsAbouteSvg} />
+                        <Snackbar
+                            message="скопировано"
+                            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+                            autoHideDuration={1000}
+                            onClose={() => setOpenAlert(false)}
+                            open={openAlert}
+                        />
+                    </div>
                 </label>
             </div>
             <div className='addRefferralModal__bottom-block'>
                 <div className='addRefferralModal__range'>
                     <div className='addRefferralModal__Сoefficient '>
                         <div className='Сoefficient__title'> <p className='small-font'>Установить коэффициент комиссии </p></div>
-                   
-                    <IOSSlider
-                        aria-label="Custom marks"
-                        step={25}
-                        defaultValue={0}
-                        getAriaValueText={valuetext}
-                        valueLabelDisplay="off"
-                        marks={marks}
-                        onChange={handleChange}
-                    />
-                </div>
+
+                        <IOSSlider
+                            aria-label="Custom marks"
+                            step={25}
+                            defaultValue={0}
+                            getAriaValueText={valuetext}
+                            valueLabelDisplay='off'
+                            marks={marks}
+                            onChange={handleChange}
+                            value={value}
+                        />
+                    </div>
 
                     <div className='addRefferralModal__discounts '>
-                        <div  className='discounts__title'> <p className='small-font'>Период скидки для реферала </p></div>
-                   
+                        <div className='discounts__title'> <p className='small-font'>Период скидки для реферала </p></div>
+
                         <IOSSlider
-                             step={20}
-                        aria-label="Custom marks"
-                        defaultValue={0}
-                        getAriaValueText={valuetext}
-                        valueLabelDisplay="off"
-                        marks={marksDiscounts}
+                            step={20}
+                            aria-label="Custom marks"
+                            defaultValue={0}
+                            getAriaValueText={valuetext}
+                            valueLabelDisplay="off"
+                            marks={marksDiscounts}
                         // onChange={handleChange}
-                    />
+                        />
+                    </div>
                 </div>
-                </div>
-        
+
                 <TableContainer className='addRefferralModal__tableContainer' component={Paper}>
-                    <Table sx={{ maxWidth:'100%'}} aria-label="simple table">
+                    <Table sx={{ maxWidth: '100%' }} aria-label="simple table">
                         <TableHead className='addRefferralModal__thead'>
                             <TableRow >
                                 <TableCell></TableCell>
@@ -225,10 +239,15 @@ const AddRefferralModal: React.FC = () => {
                         <TableBody className='addRefferralModal__tbody'>
                             {data.map((row, i) => (
                                 <TableRow
-                                className='addRefferralModal__tableRow'
+                                    className='addRefferralModal__tableRow'
                                     key={i}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }} >
-                                    <TableCell component="th">{i + 1} .{row.tarif}  </TableCell>
+                                    <TableCell component="th">
+                                        <div className='addRefferralModal__tableCell'>
+                                            <span>{i + 1}.</span>
+                                            <span>{row.tarif}</span>
+                                        </div>
+                                    </TableCell>
                                     <TableCell component="th"><img src={line1}></img></TableCell>
                                     <TableCell component="th"> {row.partner}</TableCell>
                                     <TableCell component="th"><img src={line2}></img></TableCell>

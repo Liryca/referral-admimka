@@ -4,9 +4,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Balance from './pages/Balance/Balance';
 import Main from './pages/Main/Main';
 import Header from './components/Header/Header';
+import PartnersModal from './components/PartnersModal/PartnersModal';
+import Modal from './components//Modal/Modal';
+
+
+
 
 
 const App: React.FC = () => {
+
+
 
 
   return (
@@ -18,7 +25,7 @@ const App: React.FC = () => {
           <Route path='/balance' element={<Balance />}></Route>
         </Routes>
       </BrowserRouter>
-
+  
     </div>
   );
 }

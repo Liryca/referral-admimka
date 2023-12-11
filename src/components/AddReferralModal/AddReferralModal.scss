@@ -4,8 +4,7 @@
   gap: 2px;
   max-width: 813px;
   width: 100%;
-
-
+  margin-bottom: 50px;
 
   &__top-block {
     border-radius: 8px;
@@ -29,8 +28,8 @@
     line-height: 150%;
   }
 
-    
-  &__ic-copy{
+
+  &__ic-copy {
     stroke: #e4e4ef;
     transition: 0.2s;
     cursor: pointer;
@@ -72,7 +71,7 @@
         font-weight: 400;
         line-height: normal;
       }
-      
+
     }
 
     p {
@@ -118,7 +117,7 @@
   }
 
   &__tableContainer {
-    padding-top: 50px;
+    margin-top: 50px;
 
     tr {
       height: 20px;
@@ -163,12 +162,16 @@
     gap: 16px;
     justify-content: flex-end;
     margin-top: 38px;
+    flex-wrap: wrap;
   }
 
   &__action {
     margin-left: 0;
     max-width: 150px;
     width: 100%;
+  }
+  &__tableCell{
+    display:  flex;
   }
 }
 
@@ -200,12 +203,47 @@
   }
 }
 
+.css-eg0mwd-MuiSlider-thumb {
+  background-image: url('./images/thumb.svg');
+}
+
 .css-1eoe787-MuiSlider-markLabel {
   top: 48;
   color: "#E5E7EB";
+
 }
 
 .css-1eoe787-MuiSlider-markLabelActive {
   top: 48;
   color: "#16A382";
+}
+
+
+@media(max-width:500px) {
+  .addRefferralModal {
+
+    &__Сoefficient,
+    &__discounts {
+      flex-direction: column;
+    }
+
+    &__range {
+      gap: 100px;
+    }
+
+    &__bottom-block {
+      padding: 28px;
+    }
+
+    &__tableContainer {
+      margin-top: 80px;
+    }
+
+  }
+}
+
+@media(max-width:410px) {
+  .addRefferralModal{
+    max-width: 250px;
+  }
 }
